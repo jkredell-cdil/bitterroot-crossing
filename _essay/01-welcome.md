@@ -1,5 +1,5 @@
 ---
-title: Welcome to CB-Essay
+title: Bitterroot Crossing  Lewis & Clark Across the Lolo Trail
 order: 1
 part: Overview and Examples
 ---
