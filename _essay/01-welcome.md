@@ -1,5 +1,5 @@
 ---
-title: Bitterroot Crossing  Lewis & Clark Across the Lolo Trail
+title: Bitterroot Crossing  Lewis & Clark Across the
 order: 1
 part: Overview and Examples
 ---
