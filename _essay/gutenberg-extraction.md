@@ -1,6 +1,6 @@
 ---
 title: Extracting a Book from Project Gutenberg
-order: 35
+order: 
 part: Documentation
 ---
 

@@ -19,9 +19,9 @@
 # - Collection objectid: demo_001
 #
 image-style: full-image                # full-image, half-image, or no-image
-featured-image: /assets/img/writing-instruments.jpg
-featured-image-credit: "General Research Division, The New York Public Library. 'An illustration of writing brushes' The New York Public Library Digital Collections. 1908. [https://digitalcollections.nypl.org/items/07caacb0-c6cc-012f-af8d-58d385a7bc34](https://digitalcollections.nypl.org/items/07caacb0-c6cc-012f-af8d-58d385a7bc34)"
-featured-image-alt-text: "An illustration of writing brushes with Japanese labels" # Add alt text for accessibility
+featured-image: bitterrootcrossing_p001
+featured-image-credit: 
+featured-image-alt-text: "" # Add alt text for accessibility
 
 
 # NAVIGATION FEATURES
@@ -48,7 +48,7 @@ keyboard-essay-nav: true
 #          gregynog, ashendene, custom
 # ────────────────────────────────────────────────────────────────────────
 
-color-theme: default
+color-theme: idaho
 
 #### BUILT-IN THEMES (printing-history references)
 # idaho     — USDA, 1958 Douglas-fir cloth, gold stamp · dark green navbar · Spectral
