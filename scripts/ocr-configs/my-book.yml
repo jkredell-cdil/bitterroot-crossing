@@ -1,0 +1,54 @@
+# Settings for scripts/convert-ocr.rb — "Bitterroot Crossing Lewis & Clark Across the Lolo Trail"
+# Copy this file for a new book and edit every section.
+# Regex values are Ruby regular expressions; keep them in single quotes so backslashes stay literal.
+
+# Running header printed at the top of each page, as it appears in the OCR text.
+# \s* allows for stray spaces the OCR inserts ("Co un try").
+running_header: 'Bitterroot Crossing Lewis & Clark Across the Lolo Trail'
+
+# Chapters in reading order. `page` is the PDF page the chapter starts on (page N of the
+# pdftotext output = PDF page N). Each chapter runs until the page before the next one.
+# Output file is NN-slug.md, where NN is the position in this list.
+# Optional per chapter: `order` (default position x 10) and `part` (default "Chapter <position>").
+chapters:
+  - { title: "Introduction", page: 12, slug: introduction }
+  - { title: "CHAPTER I", page: 16, slug: General Historical Background }
+  - { title: "CHAPTER II ", page: 22, slug: Previous Efforts to Locate Routes of the Lewis and Clark Explorers }
+  - { title: "CHAPTER III", page: 38, slug: Why a New Effort Might Be Useful }
+  - { title: "CHAPTER IV", page: 42, slug: Historical Studies of the Trails of Central Idaho }
+  - { title: "CHAPTER V", page: 46, slug: Map History and Historical Trails Study }
+  - { title: "CHAPTER VI", page: 62, slug: Methodology Used in This New Effort }
+  - { title: "CHAPTER VII ", page: 72, slug: Summary }
+  - { title: "Bibliography", page: 80, slug:  }
+  - { title: "APPENDIX", page: 86, slug: Laws and Guidelines Governing Historic Landmarks }
+  -
+
+# Last PDF page of content (the index starts on page 261).
+end_page: 90
+
+# Pages to skip entirely, e.g. full-page scanned maps or images.
+skip_pages: [50, 56]
+
+# Book-specific OCR corrections, applied in order to every paragraph and footnote
+# (before the script's general fixes). `replace` may use \1 for capture groups.
+text_fixes:
+  - { find: 'l(?=daho|ntergroup|ndian)', replace: 'I' }   # "ldaho" -> "Idaho"
+  - { find: '\bthe(Astorian\w*)', replace: 'the \1' }
+  - { find: '\bL[ao]l[ao]\b', replace: 'Lolo' }           # "Lalo", "Lola"
+  - { find: '\bmodem\b', replace: 'modern' }
+  - { find: 'Theodore Stem\b', replace: 'Theodore Stern' }
+  - { find: 'Expe,_dition', replace: 'Expedition' }
+
+# Words the split-word rejoiner must never create (check joins.txt after each run).
+keep_apart: [percent]
+
+# Optional: paragraphs that open a quoted primary-source section. Group 1 becomes an ### heading,
+# group 2 an italic description; text after `source_label` becomes a **Source:** line, and the
+# following paragraphs are blockquoted. Delete this block if the book has nothing like it.
+quoted_sections:
+  pattern: '\A(Account \d+\.\d+[a-z]?):\s*(.*)\z'
+  source_label: 'Source:'
+
+# Optional: paragraph that starts a further-reading list. Group 1 becomes an #### heading;
+# following short paragraphs containing a year become list items. Delete if not needed.
+reading_list_pattern: '\A((?:More information|Further reading) (?:about|on) [^:]+):\s*(.*)\z'
